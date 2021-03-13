@@ -15,7 +15,7 @@ public class SimpleCalculator {
         System.out.println(compute(left, op, right));
     }
 
-    private static int compute(int left, String op, int right) {
+    private static Number compute(int left, String op, int right) {
         switch (op.charAt(0)) {
         case '+':
             return left + right;
@@ -24,7 +24,7 @@ public class SimpleCalculator {
         case '*':
             return left * right;
         case '/':
-            return left / right;
+            return (double) left / right;
         }
         throw new IllegalArgumentException("Unknown operator:" + op);
     }
